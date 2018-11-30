@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Bureau</title>
+</head>
+<body>
+    <h1>Car Bureau</h1>
+    <h2>Add New Car</h2>
+    <form method="POST" enctype="multipart/form-data" action="">
+        <div>
+            <p>Car's VIN</p>
+            {{form.vin}}
+        </div>
+        <div>
+            <p>Car's passport</p>
+            {{form.scan}}
+        </div>
+        <div>
+            <p>Date of creation (%Y-%m-%d)</p>
+            {{form.creation_date}}
+        </div>
+        <div>
+            <p>Date of disposal (%Y-%m-%d)</p>
+            {{form.disposal_date}}
+        </div>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+</body>
+</html>
