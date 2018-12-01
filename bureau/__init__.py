@@ -11,4 +11,9 @@ app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'files')
 
 db = SQLAlchemy(app)
 
+from bureau.models import Car
+
+if not os.path.exists(os.path.join(os.getcwd(), 'cars.db')):
+    db.create_all()
+
 from bureau import routes

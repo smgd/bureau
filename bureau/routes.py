@@ -10,10 +10,7 @@ def period(start_of_period, end_of_period):
     valid_cars = []
 
     for car in cars:
-        if car.creation_date > end_of_period or car.disposal_date < start_of_period:
-            # valid_cars.append(car)
-            pass
-        else:
+        if not (car.creation_date > end_of_period or car.disposal_date < start_of_period):
             valid_cars.append(car)
 
     return valid_cars
@@ -27,10 +24,10 @@ def index():
         disposal_date = datetime.strptime(request.form['disposal_date'], '%Y-%m-%d')
         scan.save(os.path.join(app.config['UPLOAD_FOLDER'], f"{vin}.jpg"))
 
-        car = Car(id=vin, scan=f"{vin}.jpg", creation_date=creation_date, disposal_date=disposal_date)
+        car = Car(id=vin, creation_date=creation_date, disposal_date=disposal_date)
         db.session.add(car)
         db.session.commit()
-        return 'success!'
+        # return 'success!'
     return render_template('index.html')
 
 @app.route('/<path:filename>')

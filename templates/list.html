@@ -2,19 +2,19 @@
 
 {% block body %}
     <h2>List of all car's</h2>
-    <table style="width:50%">
+    <table>
         <tr>
             <th>Information</th>
             <th>Image</th>
         </tr>
         {% for car in cars %}
             <tr>
-                <td>
-                  <b>VIN: </b>{{ car.id }}<br>
-                  <b>Date of creation: </b>{{ car.creation_date.strftime('%d-%m-%Y') }}<br>
-                  <b>Date of disposal: </b>{{ car.disposal_date.strftime('%d-%m-%Y') }}
+                <td style="padding: 10px">
+                    <p><b>VIN: </b>{{ car.id }}</p>
+                    <p><b>Date of creation: </b>{{ car.creation_date.strftime('%d-%m-%Y') }}</p>
+                    <p><b>Date of disposal: </b>{{ car.disposal_date.strftime('%d-%m-%Y') }}</p>
                 </td>
-                <td><a href="{{car.id}}.jpg"><img width="100%" src="{{car.id}}.jpg"></a></td>
+                <td><a href="{{car.id}}.jpg"><img width="300px" src="{{car.id}}.jpg"></a></td>
             </tr>
         {% endfor %}
     </table>

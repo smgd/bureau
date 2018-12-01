@@ -1,16 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-        <h2>Add New Car</h2>
+    <h2>Add New Car</h2>
     <form method="POST" enctype="multipart/form-data">
-           <input type="text" placeholder="Car's VIN" name="vin">
-           <p>Date of disposal</p>
-           <input type="date" name="disposal_date">
-           <p>Date of creation</p>
-           <input type="date"name="creation_date">
-           <p>Scan of car's passport</p>
-           <input type="file" name="scan">
-           <br><br>
-           <input type="submit">
-        </form>
+        <p>Car's VIN</p>
+        <input type="text" placeholder="Car's VIN" name="vin">
+        <p>Date of creation</p>
+        <input type="date"name="creation_date">
+        <p>Date of disposal</p>
+        <input type="date" name="disposal_date">
+        <p>Scan of car's passport</p>
+        <input type="file" name="scan">
+        <br><br>
+        <input type="submit">
+    </form>
 {% endblock %}
