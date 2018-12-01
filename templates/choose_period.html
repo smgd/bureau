@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h2>Choose Period</h2>
+    <form method="POST">
+        <p>Start of period</p>
+        <input type="date" name="start_of_period">
+        <p>End of period</p>
+        <input type="date" name="end_of_period">
+        <br><br>
+        <input type="submit">
+    </form>
+{% endblock %}

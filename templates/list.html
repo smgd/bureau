@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h2>List of all car's</h2>
+    <table style="width:50%">
+        <tr>
+            <th>Information</th>
+            <th>Image</th>
+        </tr>
+        {% for car in cars %}
+            <tr>
+                <td>
+                  <b>VIN: </b>{{ car.id }}<br>
+                  <b>Date of creation: </b>{{ car.creation_date.strftime('%d-%m-%Y') }}<br>
+                  <b>Date of disposal: </b>{{ car.disposal_date.strftime('%d-%m-%Y') }}
+                </td>
+                <td><a href="{{car.id}}.jpg"><img width="100%" src="{{car.id}}.jpg"></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

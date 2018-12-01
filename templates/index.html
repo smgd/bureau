@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Car Bureau</title>
-</head>
-<body>
-    <h1>Car Bureau</h1>
-    <h2>Add New Car</h2>
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h2>Add New Car</h2>
     <form method="POST" enctype="multipart/form-data">
            <input type="text" placeholder="Car's VIN" name="vin">
            <p>Date of disposal</p>
@@ -18,5 +13,4 @@
            <br><br>
            <input type="submit">
         </form>
-</body>
-</html>
+{% endblock %}
